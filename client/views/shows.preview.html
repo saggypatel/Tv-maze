@@ -1,0 +1,12 @@
+	
+	<div class="container">
+		<div ng-repeat="alt in show" class="row">
+			<div class="span9"><h2>{{alt.show.name}}</h2></div></td>
+	    	<td><div class="span6"><img ng-src="{{alt.show.image.medium}}"></div>
+	    	<div class="span3"><p ng-bind-html='alt.show.summary | trustHTML'>		
+	    	</p>
+	    	<a href="/shows/{{alt.show.id}}">Details</a>
+	    	</div>
+		</div>
+	</div>
+	 

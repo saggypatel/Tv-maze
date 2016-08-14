@@ -1,0 +1,23 @@
+<div class="content">
+	<img ng-src="{{show.image.medium}}" align="left">
+	<div><h2>{{show.name}}</h2>
+	<small ng-repeat="gn in show.genres">{{gn}} </small></div>
+	
+	<h2>Summary</h2><div><p ng-bind-html='show.summary | trustHTML'></p></div>
+
+	<table class="table table-striped" alignt="right"bordwr="1">
+		<tr><td><h2>Casts</h2></td></tr>
+
+		<tr><td><div ng-repeat="cst in show._embedded.cast">
+		   <div ng-if="cst.person.image"> 
+		   <img ng-src="{{cst.person.image.medium}}" width="50" height="70">{{cst.person.name}}
+		   </div>
+		   
+		   <div ng-if="!cst.person.image"> 
+		    <img src="../image/default.png" width="50" height="70">{{cst.person.name}}
+		   </div>
+
+		</div>
+		</td></tr>
+	</table>	
+</div>
